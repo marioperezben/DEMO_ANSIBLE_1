@@ -1,0 +1,11 @@
+#jinja2:lstrip_blocks: True
+interfaces {
+          lo0 {
+            unit 0 {
+             family inet {
+              address {{host.loopback.ip}}/{{host.loopback.mask}};
+              }
+             }
+            }
+           }
+          
