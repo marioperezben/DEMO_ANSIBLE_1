@@ -53,4 +53,7 @@ tcp4       0      0  *.830                                         *.*          
 Then, I created two files called hosts and ansible.cnf.
 The file hosts contain the hosts information and ansible.cnf has the local configuration of Ansible.
 
+After I created a folder called group_vars with file called all.yml.
+The file called all.yml has the login information for all equipments.
+In this file the attribute { junos_host} is taken from the file "hosts".
 
