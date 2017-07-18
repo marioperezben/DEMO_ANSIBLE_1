@@ -1,12 +1,12 @@
-# DEMO_ANSIBLE_1
+DEMO_ANSIBLE_1
 This is a very simple project.
 In my lab I use two vMX and Ubuntu Server with ansible and jsnapy.
-# ansible --version
+root@ubuntu$ansible --version
 ansible 2.3.1.0
  python version = 2.7.12 (default, Jul 18 2016, 15:00:48) [GCC 4.6.3]
-# jsnapy --version
+root@ubuntu$jsnapy --version
 JSNAPy version: 1.2.1.dev0
-# ansible-galaxy --version
+root@ubuntu$ansible-galaxy --version
 ansible-galaxy 2.3.1.0
 
 In my lab I had two vMX with the next versions:
@@ -15,7 +15,7 @@ In both equipments I had the next configuration at the services hierarchy.
 
 First I checked if there any issue in the netconf connetion between the server and routers.
 From Serveer:
-# ssh -p 830 -s 192.168.111.3 netconf 
+root@ubuntu$ ssh -p 830 -s 192.168.111.3 netconf 
 Password:
 <!-- No zombies were killed during the creation of this user interface -->
 <!-- user root, class super-user -->
