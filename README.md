@@ -59,3 +59,8 @@ In this file the attribute { junos_host} is taken from the file "hosts".
 
 The next folder that I created was the folder called host_vars where I created two files with the specific information for each vMX.(vMX1.yml and vMX2.yml)
 
+Then I created another folder called Template, and in this folder I created a file called lo0.j2 (jinaja2). This file contain the configuration that I need sent to the vMX in jinja2 format. For call the loopback IP, I must to said in the file the path from where it must take the information.
+For example:
+ {{host.loopback.ip}}/{{host.loopback.mask}} For this the path, it search in the folder /host_vars, and in each file it serch first the label host, then serach loopbacklabel  and the search IP.
+ 
+ 
