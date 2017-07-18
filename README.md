@@ -69,8 +69,9 @@ For example:
  The third task take each file with .conf extension and the apply in the each equipment (vMX).
  The task called "check" uses jsnapy to check the status of the interface loopback that it created before. It uses the file called test_loopback.yml for make the test.
  Finally the last task is called "Check" it test the results, it makes a search in the register called debug_jsnapy (It was define in the task "check") and search for key word total_failed.
+ The file called test_loopback.yml have the command that it excute in the equipments, in this case is "show interface terse".
  
- 
+ To excute the playbook the command is:  ansible-playbook playbook1.yml 
  
  
  
