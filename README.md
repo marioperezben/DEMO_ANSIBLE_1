@@ -2,6 +2,7 @@ DEMO_ANSIBLE_1
 This is a very simple project.
 In my lab I use two vMX and Ubuntu Server with ansible and jsnapy.
 root@ubuntu$ansible --version
+
 ansible 2.3.1.0
  python version = 2.7.12 (default, Jul 18 2016, 15:00:48) [GCC 4.6.3]
 root@ubuntu$jsnapy --version
