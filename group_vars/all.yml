@@ -1,0 +1,8 @@
+---
+ADMPASS: mario123456
+ADMUSER: root
+# new from Ansible 2.1 (provider)
+credentials:
+ host: "{{ junos_host }}"
+ password: mario123456
+ username: root
