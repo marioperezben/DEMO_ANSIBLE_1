@@ -1,0 +1,5 @@
+[all:children]
+MX
+[MX]
+vMX1 junos_host=192.168.111.3
+vMX2 junos_host=192.168.111.5
