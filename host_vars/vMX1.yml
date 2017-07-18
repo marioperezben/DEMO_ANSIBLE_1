@@ -1,0 +1,6 @@
+---
+ host:
+  loopback:
+   ip: 1.1.1.1
+   mask: 32
+   
