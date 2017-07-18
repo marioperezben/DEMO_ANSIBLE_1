@@ -63,4 +63,17 @@ Then I created another folder called Template, and in this folder I created a fi
 For example:
  {{host.loopback.ip}}/{{host.loopback.mask}} For this the path, it search in the folder /host_vars, and in each file it serch first the label host, then serach loopbacklabel  and the search IP.
  
+ After, I created the playbook called playbook1.yml, this playbook has five task.
+ The task called "Creacion directorio" create a folder called "DEMO_ANSIBLE" with files that have the name of each host.
+ The task called "Archivos de Configuracion", take the file lo0.j2 and for each host create and file with .cnf extension in the path defined like DEMO_ANSIBLE/{{inventory_hostname}}/{{inventory_hostname}}.conf.
+ The third task take each file with .conf extension and the apply in the each equipment (vMX).
+ The task called "check" uses jsnapy to check the status of the interface loopback that it created before. It uses the file called test_loopback.yml for make the test.
+ Finally the last task is called "Check" it test the results, it makes a search in the register called debug_jsnapy (It was define in the task "check") and search for key word total_failed.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
