@@ -57,3 +57,5 @@ After I created a folder called group_vars with file called all.yml.
 The file called all.yml has the login information for all equipments.
 In this file the attribute { junos_host} is taken from the file "hosts".
 
+The next folder that I created was the folder called host_vars where I created two files with the specific information for each vMX.(vMX1.yml and vMX2.yml)
+
