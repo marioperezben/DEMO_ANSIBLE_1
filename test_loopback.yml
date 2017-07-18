@@ -1,5 +1,5 @@
 ---
- snapcheck_interfaces_op_status:
+ interfaces_status:
   - command: show interfaces terse
   - iterate:
       xpath: '//physical-interface[contains(name, "lo0")]'
