@@ -1,4 +1,5 @@
 #DEMO_ANSIBLE_1
+
 This is a very simple project.
 In my lab I use two vMX and Ubuntu Server with ansible and jsnapy.
 root@ubuntu$ansible --version
@@ -25,14 +26,14 @@ root@ubuntu$ ssh -p 830 -s 192.168.111.3 netconf
 
 Password:
 
-<-- No zombies were killed during the creation of this user interface -->
-<-- user root, class super-user -->
-<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
-  <capabilities>
-....... omited output
-  </capabilities>
-  <session-id>4665</session-id>
-</hello>
+<-- No zombies were killed during the creation of this user interface --> 
+<-- user root, class super-user --> 
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"> 
+  <capabilities> 
+....... omited output 
+  </capabilities> 
+  <session-id>4665</session-id> 
+</hello> 
 
 
 In the vMX:
