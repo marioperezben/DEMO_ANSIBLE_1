@@ -51,4 +51,6 @@ tcp4       0      0  192.168.111.3.830                             192.168.111.1
 tcp4       0      0  *.830                                         *.*                                           LISTEN
 
 Then, I created two files called hosts and ansible.cnf.
+The file hosts contain the hosts information and ansible.cnf has the local configuration of Ansible.
+
 
