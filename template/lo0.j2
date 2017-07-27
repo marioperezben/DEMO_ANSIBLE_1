@@ -7,5 +7,21 @@ interfaces {
               }
              }
             }
+           {{ host.ospf.intospf}} {
+             unit 0 {
+              family inet {
+               address {{host.ospf.ip}}/{{host.ospf.mask}};
+               }
+            }
            }
-          
+         }
+protocols {
+          ospf {
+              area 0.0.0.0 {
+                  interface {{host.ospf.intospf}}.0 {
+                      interface-type p2p;
+                       }
+                }
+           }
+         } 
+         
