@@ -1,0 +1,11 @@
+---
+ ospf_status:
+  - command: show ospf neighbor
+  - iterate:
+      xpath: '//ospf-neighbor'
+      id: './ospf-neighbor-state' 
+      tests:
+       - is-equal: ospf-neighbor-state, Full
+         info: "OSPF ARRIBA"
+         err: "OSPF NO SUBIO"
+         
