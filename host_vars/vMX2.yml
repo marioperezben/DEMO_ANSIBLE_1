@@ -3,3 +3,9 @@
   loopback:
    ip: 2.2.2.2
    mask: 32
+  ospf:
+   intospf: ge-0/0/2
+   ip: 192.168.14.1
+   mask: 31
+   peer: 1.1.1.1 
+   
