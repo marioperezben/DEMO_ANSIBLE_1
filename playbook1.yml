@@ -1,0 +1,59 @@
+---
+ - name: "Crear loopback"
+   connection: local
+   gather_facts: no
+   roles:
+   - Juniper.junos
+   hosts: MX
+   tasks:
+    - name: "Creacion directorio"
+      file:
+       path: "DEMO_ANSIBLE/{{inventory_hostname}}"
+       state: directory
+    - name: "Archivos de Configuracion"
+      template:
+       src: template/lo0.j2
+       dest: DEMO_ANSIBLE/{{inventory_hostname}}/{{inventory_hostname}}.conf
+    - name: "Aplicar configuracion"
+      junos_config:
+       host: "{{ credentials.host }}"
+       username: "{{credentials.username}}"
+       password: "{{credentials.password}}"
+       src: DEMO_ANSIBLE/{{inventory_hostname}}/{{inventory_hostname}}.conf
+    - name: Revision estado lo0
+      junos_jsnapy:
+       host: "{{ credentials.host }}"
+       user: "{{ credentials.username }}"
+       passwd: "{{ credentials.password}}"
+       action: "snapcheck"
+       test_files: test_loopback.yml
+      register: debug_jsnapy
+#    - name: Debug jsnapy
+#      debug:
+#        msg: "{{debug_jsnapy}}"
+    - name: Resultado test de interface loopback up
+      assert:
+        that:
+          - "debug_jsnapy.total_failed == 0"
+        msg: "'total_failed' debe ser cero"
+    - name: Revision OSPF
+      junos_jsnapy:
+       host: "{{credentials.host}}"
+       user: "{{credentials.username}}"
+       passwd: "{{credentials.password}}"
+       action: "snapcheck"
+       test_files: test_ospf.yml
+      register: debug_jsnapy2
+    - name: Resultado test OSPF
+      assert:
+        that:
+          - "debug_jsnapy2.total_failed == 0"
+        msg: "'No se establece sesion OSPF'"
+
+    - name: PING
+      junos_ping:
+        host: "{{credentials.host}}"
+        user: "{{credentials.username}}"
+        passwd: "{{credentials.password}}"
+        dest_ip: "{{host.ospf.peer}}"
+        
