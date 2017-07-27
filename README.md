@@ -73,6 +73,9 @@ For example:
  
  To excute the playbook the command is:  ansible-playbook playbook1.yml 
  
+ Changes:7/27/2017
+ I included another task in the playbook called PING, this task called the function junos_ping for make ping tests. In the playbook I included another task called "Revision OSPF", that task call the file "test_ospf.yml", that file contain a test that check ospf neighbor state. And in the file lo0.j2 I included new configuration for OSPF. 
+ 
  
  
  
